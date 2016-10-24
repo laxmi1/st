@@ -1,0 +1,21 @@
+REASONS FOR FAILED TEST CASES:
+
+item_old_form_product - Item name,Qty,Disc these xpath positions are changed
+new_item_catalog - Item name,Qty,Disc these xpath positions are changed
+item_old_form_outsourced - Item name,Qty,Disc,width,height these xpath positions are changed
+item_old_form_template - Item name,Qty,Disc,width,height these xpath positions are changed
+new_item_product - Item name,Qty,Disc these xpath positions are changed
+item_old_form_catalog - Item name,Qty,Disc these xpath positions are changed
+new_item_template - Item name,Qty,Disc,width,height these xpath positions are changed
+item_old_form_custom - Item name,Qty,Disc,width,height these xpath positions are changed
+new_item_outsourced - Item name,Qty,Disc,width,height these xpath positions are changed
+new_item_custom - Item name,Qty,Disc,width,height these xpath positions are changed
+
+
+Regression:
+bug_3432 - Copy xpath is changed
+bug_3128 - flash message is to be removed
+bug_3216 - flash message is to be removed
+bug_3438 - In setup, 'send order confirmation email' flag's xpath is changed
+bug_2992 - In saleslead page, assertion failed at task name
+bug_2332 - Move to Project xpath is changed
