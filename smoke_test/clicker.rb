@@ -22,13 +22,14 @@ class Clicker < Test::Unit::TestCase
   
    login
 
-   @driver.find_element(:xpath, "//img[@class='close-image']").click
+   # @driver.find_element(:xpath, "//img[@class='close-image']").click
 
    puts "popup closed"
 
    @driver.find_element(:link_text, "View Work").click
 
    sleep 10
+
 
    i = 1
    total = 125 
@@ -40,11 +41,22 @@ class Clicker < Test::Unit::TestCase
         puts "clicked"+i.to_s
         i = i+1
       else
-        main_window = @driver.window_handle
-        @driver.find_element(:xpath, "html/body/form/div[6]/div/div[4]/div/div/tr["+i.to_s+"]/td[4]/span[1]/i").click
-        @driver.switch_to.window(main_window)
-        sleep 35
-        @driver.navigate().refresh()
+        j = i
+        begin
+        # main_window = @driver.window_handle
+        # @driver.find_element(:xpath, "html/body/form/div[6]/div/div[4]/div/div/tr["+i.to_s+"]/td[4]/span[1]/i").click
+        # @driver.switch_to.window(main_window)
+        # sleep 35
+        # @driver.navigate().refresh()
+        # wait = Selenium::WebDriver::Wait.new(:timeout => 10)
+        # main_window = @driver.window_handle
+        # wait.until { @driver.find_element(:xpath, "html/body/form/div[6]/div/div[4]/div/div/tr["+j.to_s+"]/td[4]/span[1]/i").displayed? }
+        @driver.find_element(:xpath, "html/body/form/div[6]/div/div[4]/div/div/tr["+j.to_s+"]/td[4]/span[1]/i").click
+        puts "clicked"+j.to_s
+        # @driver.switch_to.window(main_window)
+        sleep 40
+        j= j+1
+      end while j <= total
       end
 
     end while i <= total
@@ -91,3 +103,5 @@ class Clicker < Test::Unit::TestCase
     @accept_next_alert = true
   end
 end
+# @driver.find_element(:xpath, "html/body/form/div[7]/div/div[3]/div/div[2]/div[1]/table/tbody/tr["+i.to_s+"]/td[3]/span").text == "Clicked"
+# @driver.find_element(:xpath, "html/body/form/div[7]/div/div[3]/div/div[2]/div[1]/table/tbody/tr["+i.to_s+"]/td[4]/div/table/tbody/tr/td[1]/div/div/a/img").click
