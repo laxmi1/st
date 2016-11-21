@@ -1,8 +1,0 @@
-*.txt
-*.log
-downloads/*.csv
-downloads/*.pdf
-downloads/*.tsv
-*.html
-.ruby-version
-.ruby-gemset
