@@ -24,8 +24,8 @@ class Clicker1 < Test::Unit::TestCase
     Selenium::WebDriver::Chrome.driver_path="/home/laxmikanth/work/socialtrade/chromedriver"
     @driver = Selenium::WebDriver.for :chrome
     # @driver= Selenium::WebDriver.for :firefox
-    @base_url = "https://socialtrade.biz/User/dashboard.aspx"
-    # @base_url = "http://sserp.ablazeerp.com/login.aspx"
+    # @base_url = "https://socialtrade.biz/User/dashboard.aspx"
+    @base_url = "http://sserp.ablazeerp.com/login.aspx"
     @driver.manage.timeouts.implicit_wait = 10
     @driver.manage.window.maximize
     @wait = Selenium::WebDriver::Wait.new(:timeout => 200)
@@ -51,6 +51,15 @@ end
      puts "popup closed"
      @driver.find_element(:link_text, "View Work").click
      sleep 10
+     
+     begin  
+     rescue
+     if @driver.find_element(:xpath, "html/body/form/div[7]/div/div[3]/div/input")
+      @driver.find_element(:xpath, "html/body/form/div[7]/div/div[3]/div/input").click
+      sleep 30
+     end
+     end 
+
      i = 1
      total = 250 
    # puts  @driver.find_element(:xpath, "html/body/form/div[6]/div/div[4]/div/div/tr["+i.to_s+"]/td[3]/span/b").text
