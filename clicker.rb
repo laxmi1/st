@@ -24,11 +24,11 @@ class Clicker < Test::Unit::TestCase
     Selenium::WebDriver::Chrome.driver_path="/home/laxmikanth/work/socialtrade/chromedriver"
     @driver = Selenium::WebDriver.for :chrome
     # @driver= Selenium::WebDriver.for :firefox
-    # @base_url = "https://socialtrade.biz/User/dashboard.aspx"
-    @base_url = "http://sserp.ablazeerp.com/login.aspx"
+    @base_url = "https://socialtrade.biz/User/dashboard.aspx"
+    # @base_url = "http://sserp.ablazeerp.com/login.aspx"
     @driver.manage.timeouts.implicit_wait = 10
     @driver.manage.window.maximize
-    @wait = Selenium::WebDriver::Wait.new(:timeout => 200)
+    @wait = Selenium::WebDriver::Wait.new(:timeout => 600)
     @driver 
 end
 
@@ -38,7 +38,7 @@ def login
     # @driver.find_element(:xpath, "html/body/div[2]/div[1]/div").click
     # sleep 5
     @driver.find_element(:xpath, "//input[@placeholder='Enter Your User ID Here']").clear
-    @driver.find_element(:xpath, "//input[@placeholder='Enter Your User ID Here']").send_keys "61440426"
+    @driver.find_element(:xpath, "//input[@placeholder='Enter Your User ID Here']").send_keys "61700443"
     @driver.find_element(:xpath, "//input[@placeholder='Enter Your Password']").clear
     @driver.find_element(:xpath, "//input[@placeholder='Enter Your Password']").send_keys "Root@1234" 
     @driver.find_element(:xpath, "//input[@value='LOGIN']").click

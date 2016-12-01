@@ -27,7 +27,7 @@ class Clicker1 < Test::Unit::TestCase
     # @base_url = "https://socialtrade.biz/User/dashboard.aspx"
     @base_url = "http://sserp.ablazeerp.com/login.aspx"
     @driver.manage.timeouts.implicit_wait = 10
-    @driver.manage.window.maximize
+    # @driver.manage.window.maximize
     @wait = Selenium::WebDriver::Wait.new(:timeout => 200)
     @driver 
 end
@@ -38,7 +38,7 @@ def login
     # @driver.find_element(:xpath, "html/body/div[2]/div[1]/div").click
     # sleep 5
     @driver.find_element(:xpath, "//input[@placeholder='Enter Your User ID Here']").clear
-    @driver.find_element(:xpath, "//input[@placeholder='Enter Your User ID Here']").send_keys "61700443"
+    @driver.find_element(:xpath, "//input[@placeholder='Enter Your User ID Here']").send_keys "61554839"
     @driver.find_element(:xpath, "//input[@placeholder='Enter Your Password']").clear
     @driver.find_element(:xpath, "//input[@placeholder='Enter Your Password']").send_keys "Root@1234" 
     @driver.find_element(:xpath, "//input[@value='LOGIN']").click
@@ -51,7 +51,7 @@ end
      puts "popup closed"
      @driver.find_element(:link_text, "View Work").click
      sleep 10
-     
+
      begin  
      rescue
      if @driver.find_element(:xpath, "html/body/form/div[7]/div/div[3]/div/input")
@@ -60,11 +60,11 @@ end
      end
      end 
 
-     i = 1
+     i = 2
      total = 250 
-   # puts  @driver.find_element(:xpath, "html/body/form/div[6]/div/div[4]/div/div/tr["+i.to_s+"]/td[3]/span/b").text
+   puts  @driver.find_element(:xpath, "html/body/form/div[7]/div/div[3]/div/div[2]/div[1]/table/tbody/tr["+i.to_s+"]/td[3]/span").text
     begin
-      if @driver.find_element(:xpath, "html/body/form/div[5]/div/div[4]/div/div/tr["+i.to_s+"]/td[3]/span/b").text == "Clicked"
+      if @driver.find_element(:xpath, "html/body/form/div[7]/div/div[3]/div/div[2]/div[1]/table/tbody/tr["+i.to_s+"]/td[3]/span").text == "Clicked"
         puts "clicked"+i.to_s
         i = i+1
       else
@@ -78,10 +78,10 @@ end
         # wait = Selenium::WebDriver::Wait.new(:timeout => 10)
         # main_window = @driver.window_handle
         # wait.until { @driver.find_element(:xpath, "html/body/form/div[6]/div/div[4]/div/div/tr["+j.to_s+"]/td[4]/span[1]/i").displayed? }
-        @driver.find_element(:xpath, "html/body/form/div[5]/div/div[4]/div/div/tr["+j.to_s+"]/td[4]/span[1]/i").click
+        @driver.find_element(:xpath, "html/body/form/div[7]/div/div[3]/div/div[2]/div[1]/table/tbody/tr["+j.to_s+"]/td[4]/div/table/tbody/tr/td[1]/div/div/a/img").click
         puts "clicked"+j.to_s
         # @driver.switch_to.window(main_window)
-        sleep 40
+        sleep 35
         j= j+1
       end while j <= total
       end
@@ -130,3 +130,6 @@ end
 end
 # @driver.find_element(:xpath, "html/body/form/div[7]/div/div[3]/div/div[2]/div[1]/table/tbody/tr["+i.to_s+"]/td[3]/span").text == "Clicked"
 # @driver.find_element(:xpath, "html/body/form/div[7]/div/div[3]/div/div[2]/div[1]/table/tbody/tr["+i.to_s+"]/td[4]/div/table/tbody/tr/td[1]/div/div/a/img").click
+                              
+#@driver.find_element(:xpath, "html/body/form/div[5]/div/div[4]/div/div/tr["+i.to_s+"]/td[3]/span/b").text == "Clicked"
+#@driver.find_element(:xpath, "html/body/form/div[5]/div/div[4]/div/div/tr["+j.to_s+"]/td[4]/span[1]/i").click
