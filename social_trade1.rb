@@ -72,14 +72,17 @@ class Clicker < Test::Unit::TestCase
     def test_clicker
         begin
             login
+            # sleep 5 
+            # @driver.find_element(:xpath, "html/body/form/div[4]/div/div[2]/div[2]/img").click
+            # sleep 5
             @driver.find_element(:link_text, "View Advertisements").click
             puts "View Advertisements button clicked."
-            sleep 30
+            sleep 20
         rescue
             puts "enter in to rescue"
-            # if @driver.find_element(:xpath, "html/body/form/div[7]/div/div[3]/div/input")
+            # if @driver.find_element(:xpath, "html/body/form/div[4]/div/div[2]/div[2]/img")
             #     puts "enter in to if"
-            #     @driver.find_element(:xpath, "html/body/form/div[7]/div/div[3]/div/input").click
+            #     @driver.find_element(:xpath, "html/body/form/div[4]/div/div[2]/div[2]/img").click
             #     sleep 30
             # end
         end
@@ -96,20 +99,23 @@ class Clicker < Test::Unit::TestCase
         count = 0
         begin
             begin
-                if @driver.find_element(:xpath, "html/body/form/div[3]/div/div[3]/div/div/div/div[3]/div[1]/div[2]/div[2]/div/tr["+i.to_s+"]/td[3]/span/b").text == "Clicked"
+                # if @driver.find_element(:xpath, "html/body/form/div[3]/div/div[3]/div/div/div/div[3]/div[1]/div[2]/div[2]/div/tr["+i.to_s+"]/td[3]/span/b").text == "Clicked"
+                if @driver.find_element(:xpath, "html/body/form/div[3]/div/div[3]/div/div/div/div[4]/table[2]/tbody/tr["+i.to_s+"]/td[3]/span/b").text == "Clicked"
                     puts "#{i} row already clicked."
                     count = count+1
                 else
                     j = 1
                     begin
                         begin 
-                            @driver.find_element(:xpath, "html/body/form/div[3]/div/div[3]/div/div/div/div[3]/div[1]/div[2]/div[2]/div/tr["+i.to_s+"]/td[4]/span[2]/i").click
+                            html/body/form/div[3]/div/div[3]/div/div/div/div[4]/table[2]/tbody/tr["+i.to_s+"]/td[4]/span[2]/i
+                            # @driver.find_element(:xpath, "html/body/form/div[3]/div/div[3]/div/div/div/div[3]/div[1]/div[2]/div[2]/div/tr["+i.to_s+"]/td[4]/span[2]/i").click
+                            @driver.find_element(:xpath, "html/body/form/div[3]/div/div[3]/div/div/div/div[4]/table[2]/tbody/tr["+i.to_s+"]/td[4]/span[2]/i").click
                             print "Clicked #{i} row: "
                             sleep 35
                         rescue
                         end
                         begin
-                            if @driver.find_element(:xpath, "html/body/form/div[3]/div/div[3]/div/div/div/div[3]/div[1]/div[2]/div[2]/div/tr["+i.to_s+"]/td[3]/span/b").text == "Clicked"
+                            if @driver.find_element(:xpath, "html/body/form/div[3]/div/div[3]/div/div/div/div[4]/table[2]/tbody/tr["+i.to_s+"]/td[3]/span/b").text == "Clicked"
                                 print "Status done."
                                 puts ""
                                 count = count+1
